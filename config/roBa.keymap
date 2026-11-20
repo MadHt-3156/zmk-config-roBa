@@ -52,6 +52,11 @@
             bindings = <&lt 6 LANG2>;
             key-positions = <39 40>;
         };
+
+        desktop_r {
+            bindings = <&kp A>;
+            key-positions = <7 8>;
+        };
     };
 
     macros {
@@ -84,6 +89,13 @@
             bindings = <&to 0>, <&macro_wait_time 200>, <&bt BT_SEL 2>;
 
             label = "BLUETOOTH_3_MAC";
+        };
+
+        desktop_r: desktop_r {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&none>;
+            label = "DESKTOP_R";
         };
     };
 
@@ -170,10 +182,10 @@
 
         SCROLL {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                      &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                          &trans
+&trans  &trans  &trans  &trans  &trans                                  &trans         &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans              &trans         &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans              &trans         &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &kp LC(LEFT_ARROW)  &kp LC(RIGHT)                          &trans
             >;
         };
     };
